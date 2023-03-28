@@ -1,0 +1,14 @@
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.pageContainer {
+  box-sizing: border-box;
+}
