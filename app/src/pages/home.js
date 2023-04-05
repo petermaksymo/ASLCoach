@@ -1,49 +1,55 @@
-import React, { useRef, useEffect } from 'react';
-import { Grid, Typography } from '@mui/material';
-import Webcam from 'react-webcam';
+import React from "react"
+import { Box, Button, Grid, Typography } from "@mui/material"
 
-import AlphabetButtons from '../components/alphabetButtons';
 
 function Home(props) {
-  const webcamRef = useRef(null);
-  useEffect(() => captureVideo(), [webcamRef])
-
-  const captureVideo = (counter = 0) => {
-    if(webcamRef && webcamRef.current) {
-      const imageSrc = webcamRef.current.getScreenshot();
-
-      // console.log(imageSrc)
-      // Do something with the imageSrc, like send it to the ML algorithm for prediction
-    }
-
-    requestAnimationFrame(() => {
-      // captureVideo()
-    })
-  };
-  
   return (
-    <Grid container maxWidth='lg' marginX='auto'>
+    <Grid container maxWidth="lg" marginX="auto">
       <Grid item xs={12}>
-        <Typography variant="h4" style={{ width: '100%', textAlign: 'center' }}>
-          ASL Coach
+        <Typography variant="h4" my={2}>
+          Welcome to ASL Coach!
         </Typography>
-      </Grid>
-      <Grid container item spacing={2}>
-        <Grid item xs={12} md={8}>
-          <Webcam
-            style={{ width: '100%' }}
-            audio={false}
-            ref={webcamRef}
-            screenshotFormat="image/jpeg"
-            videoConstraints={{ facingMode: 'user' }}
-          />
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <AlphabetButtons />
-        </Grid>
+        <Typography paragraph>
+          This is a personal project created by{" "}
+          <a href="https://peter.maksymowsky.com" target="_blank">
+            Peter Maksymowsky
+          </a>{" "}
+          to help teach you how to sign the ASL alphabet.
+        </Typography>
+        <Typography paragraph>
+          This project is built with <strong>React</strong> and has a{" "}
+          <strong>client-side machine learning model</strong> which is used to
+          run the inferencing in near real-time. The model was originally
+          developed with <strong>Pytorch</strong>, using{" "}
+          <strong>transfer learning</strong> with the{" "}
+          <a href="https://arxiv.org/pdf/1807.11626.pdf" target="_blank">
+            MNASNET 0.5 model
+          </a>
+          . The model was fine-tuned by replacing the final classifier with one
+          targeting the 27 classes for this problem and locking the parameters
+          for the rest of the model. It was then trained on a{" "}
+          <a
+            href="https://www.kaggle.com/datasets/lexset/synthetic-asl-alphabet"
+            target="_blank"
+          >
+            Kaggle ASL Alphabet dataset
+          </a>
+          . Finally, the model was exported into an <strong>ONNX</strong>-based
+          model to work with the ONNX web runtime. This allows us to run the
+          model client-side using the available gpu resources of the client with{" "}
+          <strong>webGL</strong>.
+        </Typography>
+        <Box sx={{ display: "flex", gap: 4 }}>
+          <Button variant="contained" href="/game" size="large">
+            Play Game
+          </Button>
+          <Button variant="contained" href="/practice" size="large">
+            Practice
+          </Button>
+        </Box>
       </Grid>
     </Grid>
-  );
+  )
 }
 
-export default Home;
+export default Home

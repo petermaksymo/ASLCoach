@@ -10,22 +10,19 @@ const theme = createTheme({
     },
   },
   palette: {
-    palette: {
-      primary: {
-        main: '#43a047',
-      },
-      secondary: {
-        main: '#ff7043',
-      },
-      type: 'light',
+    mode: "light",
+    primary: {
+      main: "#3f51b5",
     },
-    text: {
-      main: "#FFFFFF",
-      grey: "#555555",
-      dark: "#303030",
+    secondary: {
+      main: "#f50057",
     },
-    typography: {
-      fontFamily: "Red Hat Display",
+  },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        disableElevation: true,
+      },
     },
   },
 })

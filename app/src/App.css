@@ -1,6 +1,6 @@
 a {
-  text-decoration: none;
-  color: unset;
+  color: #3f51b5;
+  font-weight: 600;
 }
 
 .App {
@@ -11,4 +11,19 @@ a {
 
 .pageContainer {
   box-sizing: border-box;
+}
+
+.video-window {
+  box-shadow: 0px 0px 18px 36px rgba(85, 176, 73, 0.75) inset;
+  -webkit-box-shadow: 0px 0px 18px 36px rgba(85, 176, 73, 0.75) inset;
+  -moz-box-shadow: 0px 0px 18px 36px rgba(85, 176, 73, 0.75) inset;
+}
+
+.video-window-reverse {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  transition: box-shadow 0.5s ease-out;
+  -webkit-transition: box-shadow 0.5s ease-out;
+  -moz-transition: box-shadow 0.5s ease-out;
 }

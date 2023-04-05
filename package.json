@@ -4,12 +4,7 @@
   "private": false,
   "scripts": {
     "start": "docker-compose -f docker-compose.yml up -d --build",
-    "test": "docker exec -i planit_api python -m pytest api -W ignore::DeprecationWarning",
-    "app-lint": "docker exec -t planit_app npm run lint",
-    "app-prettier": "docker exec -t planit_app npm run prettier",
-    "api-lint": "docker exec -t planit_api python -m flake8 --ignore F401,E402,E501,W503 ./api",
-    "api-prettier": "docker exec -t planit_api python -m black ./api",
-    "lint": "npm run app-lint && npm run api-lint",
-    "prettier": "npm run app-prettier && npm run api-prettier"
+    "lint": "docker exec -t planit_app npm run lint",
+    "prettier": "docker exec -t planit_app npm run prettier",
   }
 }
