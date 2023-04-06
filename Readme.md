@@ -1,4 +1,4 @@
-![Website](https://img.shields.io/website?url=https://car-prices-api.maksymowsky.com/status)
+![Website](https://img.shields.io/website?url=https://asl.maksymowsky.com)
 # ASL Coach
 A simple app to teach people basic ASL letters
 
@@ -13,16 +13,14 @@ Website: [https://asl.maksymowsky.com)
 
 # Version
 
-v0.0.0
+v1.0.0
 
 # Tech Stack
 
 ### Frontend:
 - React.js
 - Material UI
-
-### Backend:
-- Flask
+- ONNX-runtime-web
 
 # Development Environment
 
@@ -31,8 +29,6 @@ v0.0.0
 2. From the project directory, run `docker-compose -f docker-compose.yml up -d --build`
 
 3. The App should be up at [localhost:3000](http://localhost:3000) and you can see the logs with `docker logs --follow planit_app`
-
-4. The API should be up at [localhost:5000](http://localhost:5000) and you can see the logs with `docker logs --follow planit_api`
 
 # License
 

@@ -70,7 +70,7 @@ function Game({ session }) {
     if (!started) return
 
     setLetter()
-    const intervalId = setInterval(captureVideo, 1000 / 1) // x times per second
+    const intervalId = setInterval(captureVideo, 1000 / 5) // x times per second
     return () => clearInterval(intervalId)
   }, [webcamRef, session, started])
   useEffect(compareRes, [res, currentClass])
