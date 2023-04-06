@@ -39,7 +39,39 @@ function Home(props) {
           model client-side using the available gpu resources of the client with{" "}
           <strong>webGL</strong>.
         </Typography>
-        <Box sx={{ display: "flex", gap: 4 }}>
+        <Typography paragraph>
+          Checkout the project's{" "}
+          <a href="https://github.com/petermaksymo/ASLCoach" target="_blank">
+            GitHub Repo!
+          </a>
+        </Typography>
+        <div
+          style={{
+            position: "relative",
+            overflow: "hidden",
+            width: "100%",
+            paddingTop: "57%",
+          }}
+        >
+          <iframe
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              borderRadius: 4
+            }}
+            src="https://www.youtube.com/embed/oSL40ddP43A"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title="Help Video"
+          />
+        </div>
+        <Box sx={{ display: "flex", gap: 4, mt: 2 }}>
           <Button variant="contained" href="/game" size="large">
             Play Game
           </Button>
