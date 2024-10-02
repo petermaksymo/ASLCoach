@@ -15,8 +15,19 @@ import Home from "./pages/home"
 import Practice from "./pages/practice"
 import { createSession } from "./utils/modelHelper"
 
+const { REACT_APP_UMAMI_URL, REACT_APP_UMAMI_ID } = process.env
+
 function App() {
   const [session, setSession] = useState(null)
+
+  useEffect(() => {
+    if(REACT_APP_UMAMI_URL && REACT_APP_UMAMI_ID) {
+      const scriptTag = document.createElement('script')
+      scriptTag.src = REACT_APP_UMAMI_URL
+      scriptTag['data-website-id'] = REACT_APP_UMAMI_ID
+      document.head.appendChild(scriptTag)
+    }
+  }, [])
 
   useEffect(async () => {
     const session = await createSession()
